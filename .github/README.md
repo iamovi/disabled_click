@@ -1,4 +1,4 @@
-![banner](./.github/banner.gif)
+![banner](banner.gif)
 
 An easy front-end solution for disabling right-click functionality on web pages.
 
