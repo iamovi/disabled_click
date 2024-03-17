@@ -1,4 +1,6 @@
-A easy front-end solution for disabling right-click functionality on web pages. 
+![banner](./.github/banner.gif)
+
+An easy front-end solution for disabling right-click functionality on web pages. 
 
 ## Installation
 
