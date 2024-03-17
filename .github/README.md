@@ -31,6 +31,8 @@ Next add =>
 
 - this to HTML Body.
 
+---
+
 ### Without CDN (optional)
 
 If you prefer not to use CDN, then follow the step by step guide to implement `disabled_click` =>
