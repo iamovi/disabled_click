@@ -13,7 +13,7 @@
 
     <!-- disabled_click CDN -->
     <link rel="stylesheet" href="./dist/v1_17-03-2024/click_box.css">
-    <!-- <script src="./dist/v1_17-03-2024/disabled.js"></script> -->
+    <!-- <script src="./dist/v1_17-03-2024/v2_disabled-f12/disabled2.js"></script> -->
 
     <style>
         * {
@@ -56,54 +56,65 @@
     <!-- disabled_cursor_right -->
     <div id="disabled_click">Right-clicking is discouraged.</div>
 
+
     <h2>Right click is currently enabled on this site.</h2>
 
     <button onclick="toggleRightClick()">> Toggle right click option</button>
 
     <script>
-        // Check right-click status on page load
-        window.addEventListener('load', function() {
-            const isEnabled = localStorage.getItem('rightClickDisabled');
-            const h2Element = document.querySelector('h2');
-            if (isEnabled) {
-                h2Element.textContent = "Right click is currently disabled on this site.";
-            } else {
-                h2Element.textContent = "Right click is currently enabled on this site.";
-            }
-        });
-    
-        document.addEventListener('contextmenu', function (e) {
-            if (localStorage.getItem('rightClickDisabled')) {
-                e.preventDefault();
-                const x = e.clientX;
-                const y = e.clientY;
-                const scrollX = window.pageXOffset;
-                const scrollY = window.pageYOffset;
-                const customMessage = document.getElementById('disabled_click');
-                customMessage.style.left = `${x + scrollX}px`;
-                customMessage.style.top = `${y + scrollY}px`;
-                customMessage.style.display = 'block';
-                setTimeout(function () {
-                    customMessage.style.display = 'none';
-                }, 1000);
-            }
-        });
-    
-        // Enable/disable right-click prevention and toggle text
-        function toggleRightClick() {
-            const isEnabled = localStorage.getItem('rightClickDisabled');
-            const h2Element = document.querySelector('h2');
-            if (isEnabled) {
-                localStorage.removeItem('rightClickDisabled');
-                h2Element.textContent = "Right click is currently enabled on this site.";
-                alert('Right-click enabled.');
-            } else {
-                localStorage.setItem('rightClickDisabled', true);
-                h2Element.textContent = "Right click is currently disabled on this site.";
-                alert('Right-click disabled.');
-            }
-        }
+// Check right-click status on page load
+window.addEventListener('load', function() {
+    const isEnabled = localStorage.getItem('rightClickDisabled');
+    const h2Element = document.querySelector('h2');
+    if (isEnabled) {
+        h2Element.textContent = "Right click is currently disabled on this site.";
+    } else {
+        h2Element.textContent = "Right click is currently enabled on this site.";
+    }
+});
+
+document.addEventListener('contextmenu', function (e) {
+    if (localStorage.getItem('rightClickDisabled')) {
+        e.preventDefault();
+        const x = e.clientX;
+        const y = e.clientY;
+        const scrollX = window.pageXOffset;
+        const scrollY = window.pageYOffset;
+        const customMessage = document.getElementById('disabled_click');
+        customMessage.style.left = `${x + scrollX}px`;
+        customMessage.style.top = `${y + scrollY}px`;
+        customMessage.style.display = 'block';
+        setTimeout(function () {
+            customMessage.style.display = 'none';
+        }, 1000);
+    }
+});
+
+// Prevent F12 key if right-click is disabled
+document.addEventListener('keydown', function(e) {
+    if ((e.key === "F12" || e.keyCode === 123) && localStorage.getItem('rightClickDisabled')) {
+        e.preventDefault();
+        alert("F12 key has been disabled while right-click is disabled.");
+    }
+});
+
+// Enable/disable right-click prevention and toggle text
+function toggleRightClick() {
+    const isEnabled = localStorage.getItem('rightClickDisabled');
+    const h2Element = document.querySelector('h2');
+    if (isEnabled) {
+        localStorage.removeItem('rightClickDisabled');
+        h2Element.textContent = "Right click is currently enabled on this site.";
+        alert('Right-click enabled.');
+    } else {
+        localStorage.setItem('rightClickDisabled', true);
+        h2Element.textContent = "Right click is currently disabled on this site.";
+        alert('Right-click disabled.');
+    }
+}
+
     </script>
+    
 </body>
 
 </html>
