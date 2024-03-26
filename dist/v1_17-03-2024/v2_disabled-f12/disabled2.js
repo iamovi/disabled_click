@@ -36,6 +36,7 @@ document.addEventListener('keydown', function (e) {
       messageBox.style.borderRadius = '5px';
       messageBox.style.fontSize = '18px';
       messageBox.style.fontFamily = 'Arial, sans-serif';
+      messageBox.style.border = '0.5px solid black'
       messageBox.style.zIndex = '9999';
       document.body.appendChild(messageBox);
       setTimeout(function () {
