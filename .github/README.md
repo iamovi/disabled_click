@@ -17,7 +17,7 @@ Check live from here =>
 
 <link rel="stylesheet" href="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/click_box.css">
 
-<script src="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/v2_disabled-f2/disabled2.js"></script>
+<script src="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/v2_disabled-f12/disabled2.js"></script>
 ```
 
 - add these css and js CDN to your HTML head tag.
@@ -48,7 +48,7 @@ Next add =>
       href="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/click_box.css"
     />
 
-    <script src="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/v2_disabled-f2/disabled2.js"></script>
+    <script src="https://iamovi.github.io/disabled_click/dist/v1_17-03-2024/v2_disabled-f12/disabled2.js"></script>
   </head>
   <body>
     <h1 style="text-align: center">Hello World!</h1>
