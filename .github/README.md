@@ -26,7 +26,7 @@ Next add =>
 
 ```bash
 <!-- disabled_right_click -->
-<div id="disabled_click">Right-clicking is discouraged.</div>
+<div id="disabled_click"></div>
 ```
 
 - this to HTML Body.
@@ -54,7 +54,7 @@ Next add =>
     <h1 style="text-align: center">Hello World!</h1>
 
     <!-- disabled_right_click -->
-    <div id="disabled_click">Right-clicking is discouraged.</div>
+    <div id="disabled_click"></div>
   </body>
 </html>
 ```
